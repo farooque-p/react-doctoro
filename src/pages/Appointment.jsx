@@ -15,7 +15,7 @@ const Appointments = () => {
   const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   const fetchDocInfo = async () => {
-    const docInfo = doctors.find((doc) => doc._id === docId);
+    const docInfo = doctors.find((doc) => doc?._id === docId);
     setDocInfo(docInfo);
   };
 
@@ -167,7 +167,7 @@ const Appointments = () => {
           </button>
         </div>
         {/* Related Doctors */}
-        <RelatedDoctors docId={docId} speciality={docInfo.speciality} />
+        <RelatedDoctors docId={docId} speciality={docInfo?.speciality} />
       </div>
       )
     </>
